@@ -139,7 +139,11 @@ console.assert(numbersOverX(numbers, 15).toString() === "18,101", {'message': 'n
 var numbers = [1,12,4,18,9,7,11,3,101,5,6];
 var numbersTwo = [33,56,72,2,5,66,90,21,42];
 // A:
+function joinArrays([numbers, numbersTwo]){
 
+  var newArray = numbers.concat(numbersTwo);
+  return newArray;
+}
 
 console.assert(joinArrays([numbers, numbersTwo]).toString() === '1,12,4,18,9,7,11,3,101,5,6,33,56,72,2,5,66,90,21,42', {'message': 'joinArrays should return "1,12,4,18,9,7,11,3,101,5,6,33,56,72,2,5,66,90,21,42"'});
 
@@ -158,13 +162,13 @@ var instructors = [
 ];
 
 var instructorNameDiscipline = instructors[5];
-// greenvIlleInstructor = <your answer>
+// instructorNameDiscipline = ['Will','JavaScript']
 
 var instructorOne = instructors[4][0];
-// instructorOne = <your answer>
+// instructorOne = Dan
 
 var instructorTwo = instructors[0][1];
-// instructorTwo = <your answer>
+// instructorTwo = JavaScript
 
 var instructorThree = instructors[2][0];
-// instructorThree = <your answer>
+// instructorThree = Brit
