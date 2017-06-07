@@ -13,7 +13,7 @@ var total = sports.push('football', 'swimming');
 var strings = ['this','is','a','collection','of','words'];
 // A:
 var stringlengths = [];
-function longestString(){
+function longestString(strings){
 for (var i = 0; i < strings.length; i++) {
   var length = strings[i].length;
   stringlengths.push(length);
@@ -37,6 +37,9 @@ var numbers = [1,12,4,18,9,7,11,3,101,5,6];
 // Write a function `smallestNumber()` that accepts an array
 // and returns the smallest number in the array.
 // A:
+function smallestNumber(numbers){
+  return Math.min.apply(null, numbers);
+}
 
 
 console.assert(smallestNumber(numbers) === 1, {"message": "smallestNumber should return 1"});
@@ -46,7 +49,16 @@ console.assert(smallestNumber(numbers) === 1, {"message": "smallestNumber should
 // Write a function `getEvens()` that accepts an array
 // and returns only the even numbers in the array.
 // A:
-
+function getEvens(numbers){
+  var evens = [];
+  for (var i = 0; i < numbers.length; i++) {
+    var remainder = (numbers[i]%2);
+    if (remainder === 0) {
+      evens.push(numbers[i]);
+    }
+  }
+  return evens;
+}
 
 console.assert(getEvens(numbers).toString() === '12,4,18,6', {'message': 'getEvens should return "12,4,18,6"'});
 
@@ -57,7 +69,13 @@ console.assert(getEvens(numbers).toString() === '12,4,18,6', {'message': 'getEve
 // Hint: When looping over the array, start at the last index
 // and decrement the iterator to zero
 // A:
-
+function arrayReverser(numbers){
+  reverseArray = [];
+  for (var i = (numbers.length)-1; i >= 0; i--) {
+    reverseArray.push(numbers[i]);
+  }
+  return reverseArray;
+}
 
 console.assert(arrayReverser(numbers).toString() === '6,5,101,3,11,7,9,18,4,12,1', {'message': 'arrayReverser should return "6,5,101,3,11,7,9,18,4,12,1"'});
 
