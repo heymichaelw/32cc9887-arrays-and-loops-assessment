@@ -3,8 +3,8 @@
 var sports = ['soccer', 'baseball'];
 var total = sports.push('football', 'swimming');
 // A:
-// sports = <your answer>
-// total = <your answer>
+// sports = ['soccer', 'baseball', 'football', 'swimming'];
+// total = 4;
 
 
 // 2.
@@ -12,8 +12,20 @@ var total = sports.push('football', 'swimming');
 // that accepts an array argument and returns the longest string in the array
 var strings = ['this','is','a','collection','of','words'];
 // A:
+var stringlengths = [];
+function longestString(){
+for (var i = 0; i < strings.length; i++) {
+  var length = strings[i].length;
+  stringlengths.push(length);
+}
 
 
+  //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
+  var max = Math.max.apply(null, stringlengths);
+  var position = stringlengths.indexOf(max);
+  return strings[position];
+
+}
 console.assert(longestString(strings) === 'collection', {"message": "longestString should return 'collection'"});
 
 
